@@ -10,5 +10,7 @@ class ViewController: UIViewController {
     @IBAction func tipChanged(_ sender: UIButton) {
     }
     
+    @IBAction func stepperValueChanged(_ sender: UIStepper) {
+    }
 }
 
