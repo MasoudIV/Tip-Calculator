@@ -1,5 +1,10 @@
 import UIKit
 
+extension String {
+    func isNotEmpty() -> Bool{
+        return !self.isEmpty
+    }
+}
 class CalculatorViewController: UIViewController {
 
     @IBOutlet weak var billTextField: UITextField!
@@ -11,6 +16,9 @@ class CalculatorViewController: UIViewController {
     var calculatorBrain = CalculatorBrain()
     
     @IBAction func tipChanged(_ sender: UIButton) {
+        
+        billTextField.endEditing(true)
+        
         selectTheButtonDeselectOthers(sender)
         let buttonTitle = sender.currentTitle
         calculatorBrain.setTipPercentage(buttonTitle)
@@ -23,6 +31,14 @@ class CalculatorViewController: UIViewController {
     }
     
     @IBAction func calculatePressed(_ sender: UIButton) {
+        let billTotal = billTextField.text
+        if let billTotal {
+            if billTotal.isNotEmpty() {
+                calculatorBrain.billTotal = Double(billTotal)!
+            }
+        }
+        print(calculatorBrain.calculateSplittedBill())
+        
     }
     
     func selectTheButtonDeselectOthers(_ button: UIButton){

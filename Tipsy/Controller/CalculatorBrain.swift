@@ -15,4 +15,8 @@ struct CalculatorBrain {
         let tipValues = ["20%":0.2, "10%":0.1, "0%":0.0]
         tipPercentage = tipValues[tipButtonTitle ?? "20%"]!
     }
+    
+    func calculateSplittedBill() -> Double {
+        return billTotal * (1 + tipPercentage) / Double(splitCount)
+    }
 }
