@@ -42,7 +42,7 @@ class CalculatorViewController: UIViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "gotoResultScreen" {
+        if segue.identifier == "goToResultScreen" {
             let destinationVC = segue.destination as! ResultViewController
             destinationVC.calcolatorBrain = calculatorBrain
         }
