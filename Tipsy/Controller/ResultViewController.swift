@@ -5,7 +5,7 @@ class ResultViewController: UIViewController {
     @IBOutlet weak var resultLabel: UILabel!
     @IBOutlet weak var summaryLabel: UILabel!
     
-    var splittedBill: Double?
+    var calcolatorBrain: CalculatorBrain?
     
     override func viewDidLoad() {
         super.viewDidLoad()

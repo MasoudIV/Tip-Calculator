@@ -44,7 +44,7 @@ class CalculatorViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "gotoResultScreen" {
             let destinationVC = segue.destination as! ResultViewController
-            destinationVC.splittedBill = calculatorBrain.calculateSplittedBill()
+            destinationVC.calcolatorBrain = calculatorBrain
         }
     }
     
