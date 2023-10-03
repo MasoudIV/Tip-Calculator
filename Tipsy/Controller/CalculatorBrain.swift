@@ -7,9 +7,9 @@
 //
 
 struct CalculatorBrain {
-    var billTotal: Double
-    var tipPercentage: Double
-    var splitCount: Int
+    var billTotal: Double = 0
+    var tipPercentage: Double = 0.2
+    var splitCount: Int = 0
     
     func getTipValue(_ tipButtonTitle: String?) -> Double {
         let tipValues = ["20%":0.2, "10%":0.1, "0%":0.0]
