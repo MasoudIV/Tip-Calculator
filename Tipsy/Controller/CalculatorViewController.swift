@@ -37,8 +37,15 @@ class CalculatorViewController: UIViewController {
                 calculatorBrain.billTotal = Double(billTotal)!
             }
         }
-        print(calculatorBrain.calculateSplittedBill())
+        performSegue(withIdentifier: "goToResultScreen", sender: self)
         
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "gotoResultScreen" {
+            let destinationVC = segue.destination as! ResultViewController
+            destinationVC.splittedBill = calculatorBrain.calculateSplittedBill()
+        }
     }
     
     func selectTheButtonDeselectOthers(_ button: UIButton){
