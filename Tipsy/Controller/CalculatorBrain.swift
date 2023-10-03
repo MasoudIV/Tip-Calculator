@@ -11,8 +11,8 @@ struct CalculatorBrain {
     var tipPercentage: Double = 0.2
     var splitCount: Int = 0
     
-    func getTipValue(_ tipButtonTitle: String?) -> Double {
+    mutating func setTipPercentage(_ tipButtonTitle: String?) {
         let tipValues = ["20%":0.2, "10%":0.1, "0%":0.0]
-        return tipValues[tipButtonTitle ?? "20%"]!
+        tipPercentage = tipValues[tipButtonTitle ?? "20%"]!
     }
 }
